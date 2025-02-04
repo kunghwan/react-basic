@@ -6,6 +6,7 @@ import Like from "./Like";
 
 const App = () => {
   const [name, setName] = useState("유경환");
+  const [count, setCount] = useState(0);
   return (
     <div>
       <Header name={name} />
@@ -17,7 +18,7 @@ const App = () => {
         onChange={(e) => setName(e.target.value)}
       />
       <Footer name={name} />
-      <Counter />
+      <Counter count={count} setCount={setCount} />
       <Like />
     </div>
   );
