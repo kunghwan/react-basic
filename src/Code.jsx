@@ -12,6 +12,8 @@ const Code = () => {
 
   //   4. onCheck라는 이름으로 함수 만들기
 
+  // 4-1 code 값이 6자리 일 때 code와 verificationCode가 일치한지 검사하고 일치하면 인증되었습니다. 틀리면 같지 않습니다. 경고 처리하기
+
   const onCheck = () => {
     if (code === verificationCode) {
       return alert("인증 되었습니다");
@@ -19,15 +21,14 @@ const Code = () => {
     alert("같지않음");
   };
 
+  // 5. useEffect로 code를 감지해서 code길이가 6자리일 때에만 onCheck하도록 코드 짜기
+
   useEffect(() => {
     if (code.length === 6) {
       // onCheck();
     }
   }, [code]);
 
-  // 4-1 code 값이 6자리 일 때 code와 verificationCode가 일치한지 검사하고 일치하면 인증되었습니다. 틀리면 같지 않습니다. 경고 처리하기
-
-  // 5. useEffect로 code를 감지해서 code길이가 6자리일 때에만 onCheck하도록 코드 짜기
   return (
     <div>
       <h1>Code</h1>
