@@ -3,66 +3,52 @@ import { useState } from "react";
 const RemindObject = () => {
   const [user, setUser] = useState({
     email: "",
-    name: "",
     password: "",
+    name: "",
   });
 
   const onChange = (e) => {
     e.preventDefault();
 
-    const name = e.target.name;
-    const value = e.target.value;
-
-    console.log(user[name]);
+    const { name, value } = e.target;
 
     setUser((prev) => ({ ...prev, [name]: value }));
   };
 
-  const [array, setArray] = useState(["서준성", "이형진", "양영탁", "오윤환"]);
-
+  const [array, setArray] = useState(["일", "이", "삼", "사"]);
   const onSubmit = () => {
     if (user.name.length === 0) {
-      return alert("이름입력 ㄱㄱ");
+      return alert("이름 입력");
     }
+
     setArray((prev) => {
-      let copy = [...prev, user.name];
-      console.log(copy);
-      return copy;
+      [...prev, user.name];
     });
-
-    // setArray((prev) => [...prev, user.name]);
   };
-
   const onDelete = () => {
-    const { name } = user;
-
-    if (name.length === 0) {
-      return alert("이름입력 ㄱㄱ");
+    if (user.name.length === 0) {
+      return alert("이름 입력");
     }
 
-    const index = array.findIndex((person) => person === name);
+    const index = user.findIndex((person) => person === user.name);
 
     if (index < 0) {
-      return alert("중복인데 ");
+      return alert("중복임");
     }
 
     console.log(array[index]);
 
     setArray((prev) => {
-      let copy = prev.filter((person) => person !== name); // 해당 이름을 제외한 새로운 배열을 만듬
-
+      let copy = prev.filter((person) => person !== user.name);
       console.log(copy); // 새로운 배열을 콘솔에 출력
-      return copy; // 새로운 배열을 반환
+      return copy;
     });
-    // setArray((prev) => prev.filter((item) => item !== name));
   };
-
   return (
     <div>
-      <h1>object</h1>
+      <h1>Object</h1>
       <input type="text" value={user.email} onChange={onChange} name="email" />
       <input type="text" value={user.name} onChange={onChange} name="name" />
-
       <input
         type="password"
         value={user.password}

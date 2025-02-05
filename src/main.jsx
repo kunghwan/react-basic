@@ -7,8 +7,8 @@ import RemindObject from "./RemindObject.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <App /> */}
-    <Object />
-    <RemindObject />
+    <App />
+    {/* <Object /> */}
+    {/* <RemindObject /> */}
   </StrictMode>
 );
