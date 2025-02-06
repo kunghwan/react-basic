@@ -1,67 +1,41 @@
+// 1. react에서 useState, useEffect, useRef 꺼내오기
+
 import { useState, useEffect, useRef } from "react";
 
+// 2. initialState 라는 이름으로 빈 배열 만들기
+
+const initialState = [];
+
 const App = () => {
-  const [value, setValue] = useState("");
+  // 3. useState를 사용해서 todos 선언하고 초기값으로 initialState 넣기
+  const [todos, setTodos] = useState(initialState);
 
-  const ref = useRef(null);
-
-  const valueRef = useRef(0);
-  // ref = 안보이는 곳에서 열일하는 친구
-  // 한 발 느린 친구
-  // 과제 제출할 때까지 아뭇것도 안하는 척 하다가 과제제출 칼같이 지키는 타입
-
-  const valueCheck = () => {
-    // 1. value가 입력되지 않았을 때 alert
-    if (value.length === 0) {
-      alert("아무것도 입력되지 않았습니다.");
-
-      // 이렇게 까지 했는데도 유저가 아무것도 적지않고 계속 버튼만 누를 때
-      ref.current?.focus();
-      const input = document.querySelector("input#myInput");
-      input.focus();
-
-      return;
-    }
-
-    if (ref.current?.value.length === 0) {
-      alert("아무것도 선택하지 않았습니다");
-
-      ref.current?.showPicker();
-
-      // const select = document.querySelector('select')
-
-      // select.sho
-
-      return;
-    }
-
-    alert(`you just typed: ${value}`);
-    // console.log("check value...");
-    const length = value.length;
-    valueRef.current = length;
-  };
+  // 4. useState로 todo 선언하고 초기값은 빈 문자열
+  const [todo, setTodo] = useState("");
 
   useEffect(() => {
-    console.log({ value });
-  }, [value]);
+    console.log(todo);
+  }, [todo]);
 
   return (
     <div>
-      <h1>app : {valueRef.current}</h1>
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        ref={ref}
-        id="myInput"
-      />
+      <h1>App</h1>
+      {/* 5.form 만들고 안에 input, button 넣기 
+      
+      5-2. input에 todo 연결하기 value, onChange
 
-      <select name="" id="" ref={ref}>
-        <option value="">a</option>
-        <option value="">b</option>
-      </select>
+      5-3 form태그에서 onSubmit 속성에 e 를 가져와 e.preventDefault() 라는 새로고침 방지하기
+      
+      */}
 
-      <button onClick={valueCheck}>value check</button>
+      <form action="" onSubmit={(e) => e.preventDefault()}>
+        <input
+          type="text"
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+        />
+        <button></button>
+      </form>
     </div>
   );
 };
