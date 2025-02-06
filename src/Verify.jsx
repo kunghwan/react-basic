@@ -109,7 +109,12 @@ export default Verify;
 const getTime = (time) => {
   const min = Math.floor(time / 60);
 
+  // Math.floor() 언제나 버림 처리하고 주어진 숫자와 같거나 작은 정수 중에서 가장 큰수 반환
+
   const sec = time - min * 60;
+
+  // time에min * 60(잠시 초.초가 계산됩니다.
+  // 예를 들어, time = 125, min = 2일 때sec = 125 - (2 * 60) = 125 - 120 = 5가5 초로
 
   return `${min}:${sec.toString().length === 1 ? `0${sec}` : sec}`;
 

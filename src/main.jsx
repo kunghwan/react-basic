@@ -9,7 +9,7 @@ import Code from "./Code.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* <App /> */}
-    <Verify />
+    {/* <Verify /> */}
     <>
       <Timer />
       <Code />
