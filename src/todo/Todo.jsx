@@ -1,12 +1,10 @@
-import { useState, useRef, useEffect } from "react";
-import { fetchList, store,deleteItem } from "./database";
+import { useState, useRef } from "react";
+import { fetchList, store, deleteItem } from "./database";
 
 const Todo = () => {
   const [arrays, setArrays] = useState(fetchList() ?? []);
 
   const [text, setText] = useState("");
-
-  // const [updates, setUpdates] = useState(null);
 
   const inputref = useRef(null);
 
@@ -35,20 +33,18 @@ const Todo = () => {
         setArrays((prev) => [...prev, text]);
         alert("성공");
         inputref.current.focus();
-
         setText("");
       });
-
-    // if (updates !== null) {
-    //   const updatess = [...arrays];
-    //   updatess[index] = text;
-    //   setArrays(updatess);
-    //   setUpdates(null);
-    //   alert("수정성공");
-    // }
   };
 
-  useEffect(() => {}, []);
+  const onDelete = (item) => {
+    deleteItem(item)
+      .catch((error) => alert(error))
+      .then((response) => {
+        console.log(response);
+        setArrays((prev) => prev.filter((it) => it !== item));
+      });
+  };
 
   return (
     <div>
@@ -62,30 +58,11 @@ const Todo = () => {
         />
         <button>add</button>
         <ul>
-          {arrays.map((items, i) => {
-            const onDelete = () => {
-                 
-              deleteItem(item)
-                 deleteItem(item.catch(
-                  (error) => alert(error))
-                  .then((response) => {
-                    console.log(response)
-                    setArrays((prev) => prev.filter((it) => it !== items));
-                  })
-                
-
-             
-            };
-            // const onUpdate = () => {
-            //   setText(arrays[i]);
-            //   setUpdates(i);
-            //   inputref.current.focus();
-            // };
+          {arrays.map((item, i) => {
             return (
               <li key={i}>
-                {items}
-                <button onClick={onDelete}>삭제</button>
-                {/* <button onClick={onUpdate}>수정</button> */}
+                {item}
+                <button onClick={() => onDelete(item)}>삭제</button>
               </li>
             );
           })}
