@@ -14,7 +14,30 @@ const App = () => {
   // 4. useState로 todo 선언하고 초기값은 빈 문자열
   const [todo, setTodo] = useState("");
 
+  const inputref = useRef(null);
+
+  // 6. onSubmit 이라는 이름의 함수를 만드세요.
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // 6-2. todo 값 입력되지 않았을 떄 예외처리
+    //  예외처리 경고 + (인풋창 포커스)
+    if (todo.length === 0) {
+      inputref?.current.focus();
+      return alert("입력해줘");
+    }
+    if (todo.length <= 1) {
+      return alert("1글자도 안됨");
+    }
+    setTodos((prev) => [...prev, todo]);
+    setTodo("");
+    // set함수는 무조건 원래의 값과 같은 탑입을 return해줘야함
+    // 6-3. todo값이 1글자 이하일 떄에도 예외처리
+    // 6-4 setTodo함수를 사용해서 todo 값을 todos에 추가하기
+  };
+
   useEffect(() => {
+<<<<<<< HEAD
     console.log(todo);
   }, [todo]);
 =======
@@ -64,6 +87,10 @@ const App = () => {
 
   // 배열에 우리가 주시하고 싶은 변수/함수를 넣어두면 해당 변수/함수가 업데이트 될 때에만 작동하는 코드를 짤 수 있음.
 >>>>>>> caa283e504f66e820c3f060192c55224b89460aa
+=======
+    console.log(todos);
+  }, [todos]);
+>>>>>>> 85820312b006fe387f36f93f8626b6d9c25bac61
 
   return (
     <div>
@@ -77,14 +104,16 @@ const App = () => {
       
       */}
 
-      <form action="" onSubmit={(e) => e.preventDefault()}>
+      <form action="" onSubmit={onSubmit}>
         <input
           type="text"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
+          ref={inputref}
         />
-        <button></button>
+        <button>ADD</button>
       </form>
+<<<<<<< HEAD
 =======
       <h3>{sec / 1000}초</h3>
       <button onClick={onPlus}>+</button>
@@ -98,6 +127,28 @@ const App = () => {
         {counting ? "stop" : "start"}
       </button>
 >>>>>>> caa283e504f66e820c3f060192c55224b89460aa
+=======
+      <ul>
+        {todos.map((to) => {
+          const onDelete = () =>
+            setTodos((prev) => prev.filter((item) => item !== to));
+
+          // setTodos((prev) => {
+          //     // let copy = [...prev];
+          // // copy.splice(index, 1);
+          // // return copy;\
+
+          // });
+
+          return (
+            <li key={to}>
+              {to}
+              <button onClick={onDelete}>삭제</button>
+            </li>
+          );
+        })}
+      </ul>
+>>>>>>> 85820312b006fe387f36f93f8626b6d9c25bac61
     </div>
   );
 };
