@@ -1,0 +1,276 @@
+#netflix_home {
+  padding: 0px 10px;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.netflix_title {
+  color: red;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#header div:nth-child(2) {
+  display: flex;
+  column-gap: 10px;
+}
+#header button:nth-child(1) {
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  font-size: 15px;
+  padding: 5px 10px;
+  background: black;
+  color: white;
+}
+#header button:nth-child(2) {
+  background: red;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
+
+#header button:nth-child(1) span {
+  font-size: 15px;
+}
+
+/* 2번째 파트 */
+.start_email {
+  text-align: center;
+}
+
+.start_email p:nth-child(1) {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.start_email p:nth-child(1) span {
+  font-size: 15px;
+}
+
+.start_email input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 15px;
+  width: 30%;
+}
+.start_email button {
+  background: red;
+  padding: 15px 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+/* 3번쨰 */
+.popcorn {
+  padding: 50px 20px;
+
+  display: flex;
+
+  column-gap: 20px;
+}
+
+.popcorn i {
+  font-size: 50px;
+}
+
+.popcorn div {
+  border-radius: 8px;
+  background: rebeccapurple;
+  padding: 10px;
+  color: white;
+}
+
+.popcorn div button {
+  color: white;
+  background: gray;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+/* 4번째 */
+
+.four_netflix h1 {
+  color: aqua;
+  font-size: 20px;
+  font-weight: 100;
+}
+.four_netflix div {
+  display: flex;
+  column-gap: 10px;
+  padding: 10px;
+}
+.four_netflix img {
+  width: 100px;
+  border-radius: 10px;
+}
+.four_netflix span {
+  font-weight: bold;
+  font-size: 40px;
+
+  padding: 10px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: gray;
+}
+.four_netflix img:nth-child(1) {
+  border: 1px solid blue;
+  position: relative;
+}
+.four_netflix span:nth-child(2) {
+  position: absolute;
+  top: 720px;
+  left: 20px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: gray;
+}
+.four_netflix img:nth-child(2) {
+  border: 1px solid blue;
+  position: relative;
+}
+.four_netflix span:nth-child(4) {
+  position: absolute;
+  top: 720px;
+  left: 135px;
+}
+.four_netflix img:nth-child(3) {
+  border: 1px solid blue;
+  position: relative;
+}
+.four_netflix span:nth-child(6) {
+  position: absolute;
+  top: 720px;
+  left: 250px;
+}
+.four_netflix img:nth-child(4) {
+  border: 1px solid blue;
+  position: relative;
+}
+.four_netflix span:nth-child(8) {
+  position: absolute;
+  top: 720px;
+  left: 365px;
+}
+.four_netflix img:nth-child(5) {
+  border: 1px solid blue;
+  position: relative;
+}
+.four_netflix span:nth-child(10) {
+  position: absolute;
+  top: 720px;
+  left: 480px;
+}
+
+/* 5번째 */
+.five_netflix {
+  display: flex;
+  flex-direction: column;
+}
+.five_netflix .box_whole {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.five_netflix .box {
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: blue;
+  padding: 10px;
+}
+.five_netflix div p:nth-child(1) {
+  color: white;
+}
+.five_netflix div p:nth-child(2) {
+  color: gray;
+}
+.five_netflix div span {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* 6번째 */
+
+.six_netflix .que {
+  list-style-type: none;
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+}
+.six_netflix .que div {
+  border: 1px solid;
+  padding: 20px;
+  background: gainsboro;
+  color: white;
+  justify-content: space-between;
+  display: flex;
+}
+.six_netflix .que div span {
+  font-size: 20px;
+}
+
+.watching p {
+  text-align: center;
+}
+.watching .address {
+  display: flex;
+  column-gap: 10px;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.watching .address input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 75%;
+}
+.watching .address button {
+  background: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  column-gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 30%;
+}
+
+/* 푸터 부분 */
+
+footer p:nth-child(1) {
+  color: gainsboro;
+}
+footer p:nth-child(1) a {
+  color: gainsboro;
+}
+footer .footer_que {
+  text-decoration: underline;
+  color: gainsboro;
+}
+footer button {
+  border: 1px solid gainsboro;
+  margin-top: 50px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  background: black;
+}
+footer button .material-icons {
+  font-size: 15px;
+}
+footer .last,
+a {
+  color: gainsboro;
+}
