@@ -101,69 +101,59 @@
   font-size: 20px;
   font-weight: 100;
 }
+
 .four_netflix div {
   display: flex;
   column-gap: 10px;
   padding: 10px;
+  position: relative; /* 이미지와 숫자 위치를 기준으로 설정 */
 }
+
 .four_netflix img {
   width: 100px;
   border-radius: 10px;
+  position: relative; /* 이미지에 상대적인 위치를 설정 */
 }
+
 .four_netflix span {
   font-weight: bold;
   font-size: 40px;
-
   padding: 10px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: gray;
+  position: absolute; /* 숫자를 절대 위치로 고정 */
+  bottom: 10px; /* 이미지 하단에 고정 */
+  left: 10px; /* 이미지 왼쪽에 고정 */
 }
-.four_netflix img:nth-child(1) {
-  border: 1px solid blue;
-  position: relative;
-}
+
 .four_netflix span:nth-child(2) {
   position: absolute;
-  top: 720px;
-  left: 20px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: gray;
+  bottom: 10px;
+  left: 10px;
 }
-.four_netflix img:nth-child(2) {
-  border: 1px solid blue;
-  position: relative;
-}
+
 .four_netflix span:nth-child(4) {
   position: absolute;
-  top: 720px;
-  left: 135px;
+  bottom: 10px;
+  left: 120px;
 }
-.four_netflix img:nth-child(3) {
-  border: 1px solid blue;
-  position: relative;
-}
+
 .four_netflix span:nth-child(6) {
   position: absolute;
-  top: 720px;
-  left: 250px;
+  bottom: 10px;
+  left: 230px;
 }
-.four_netflix img:nth-child(4) {
-  border: 1px solid blue;
-  position: relative;
-}
+
 .four_netflix span:nth-child(8) {
   position: absolute;
-  top: 720px;
-  left: 365px;
+  bottom: 10px;
+  left: 340px;
 }
-.four_netflix img:nth-child(5) {
-  border: 1px solid blue;
-  position: relative;
-}
+
 .four_netflix span:nth-child(10) {
   position: absolute;
-  top: 720px;
-  left: 480px;
+  bottom: 10px;
+  left: 450px;
 }
 
 /* 5번째 */
